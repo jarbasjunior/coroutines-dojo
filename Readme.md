@@ -14,6 +14,7 @@
 
   - [Técnicas de Programação Assíncrona](#async-programm)
   - [Programação Assíncrona com Kotlin](#async-program-kotlin)
+  - [Coroutines X Outras Formas de Gerenciar Tarefas](#coroutines-x-other-management-tasks)
 
 ---
 
@@ -54,3 +55,49 @@ Kotlin se utiliza de Corotinas para programação assíncrona, cuja abordagem te
   <img src="https://github.com/user-attachments/assets/e5edc8ee-ec0e-408a-8e27-e91b85a42f34" width="500" height="400">
 </p>
 
+### <a id="coroutines-x-other-management-tasks"/> Coroutines X Outras Formas de Gerenciar Tarefas</a>
+
+- **Coroutines X Multi-Thread**
+
+  - **_Multi Thread_**
+    - Mais agendamento de threads maior a sobrecarga
+    - Mais agendamento de corotina menor a sobrecarga (comparada a Multi-Thread)
+     
+    <br/>
+  
+    <div style="display: flex; justify-content: align-items: center;">
+      <img src="https://github.com/user-attachments/assets/ccda6732-33da-4a08-a52e-eccccc3e818c" width="580" height="330">
+    </div>
+    
+    <br/>
+
+- **Coroutine X Virtual-Thread**
+
+  - **_Virtual Thread_**
+    - Introduzida no Java 21
+    - Utilizada para resolver os problemas de bloqueio de Input/Output
+    - Ainda não suportam concorrência estruturada Structured Concurrency (yet)
+      
+    <br/>
+  
+    <div style="display: flex; justify-content: align-items: center;">
+      <img src="https://github.com/user-attachments/assets/1dc53551-3aaa-4c5a-92ca-2baf09ca6df8" width="580" height="330">
+    </div>
+
+    <br/>
+  
+- **Coroutine X Threads**
+
+  - Threads podem ser bloqueadas
+  - Coroutines são suspensas da thread, o que significa que a thread em que as coroutines estão sendo executadas estará disponível para trabalho posterior
+  - Não há um mapeamento 1:1 entre threads e coroutines
+  - Muitas coroutines por Thread
+  - Coroutines escalam melhor
+      
+  <br/>
+  
+  <div style="display: flex; justify-content: align-items: center;">
+    <img src="https://github.com/user-attachments/assets/7262e2a0-ef88-4e7f-925d-ddac9ccf5676" width="580" height="330">
+  </div>
+
+  <br/>
